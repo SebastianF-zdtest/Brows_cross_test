@@ -1,0 +1,25 @@
+
+For use in DevTools :
+1) Go to "Cosnsole"
+2) Past the code in the console and confirm
+3) If there is no error, "<- undefined" will appear
+
+IMPORTANT : With different window sizes the coordinates will be different, it is best to
+            unstick the DevTools window so the canvas has fullscreen
+
+Code:
+
+<function getMousePosition(canvas, event) {
+            let rect = canvas.getBoundingClientRect();
+            let x = event.clientX - rect.left;
+            let y = event.clientY - rect.top;
+            console.log("Coordinate x: " + x,
+                        "Coordinate y: " + y);
+        }
+
+        let canvasElem = document.querySelector("canvas");
+
+        canvasElem.addEventListener("mousedown", function(e)
+        {
+            getMousePosition(canvasElem, e);
+        });>
